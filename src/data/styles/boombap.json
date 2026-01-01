@@ -1,0 +1,64 @@
+{
+  "id": "boombap",
+  "name": "Boom Bap",
+  "bpmRange": { "min": 80, "max": 105, "default": 92 },
+  "stepsDefault": 16,
+  "tracks": [
+    { "id": "kick", "name": "Kick", "role": "foundation" },
+    { "id": "snare", "name": "Snare", "role": "backbeat" },
+    { "id": "hat", "name": "Hi-hat", "role": "groove" },
+    { "id": "shaker", "name": "Shaker", "role": "texture" },
+    { "id": "bass", "name": "Bass", "role": "bass" }
+  ],
+  "coach": {
+    "instrumentsCore": ["Kick", "Snare", "Hi-hat"],
+    "instrumentsOptional": ["Ride", "Shaker", "Vinyl noise", "One-shots"],
+    "fxPacks": [
+      { "name": "Classic Grit", "items": ["Tape saturation", "Vinyl crackle", "Bitcrusher léger"] },
+      { "name": "Punch", "items": ["Bus compressor", "Parallel comp drums", "Clipper doux"] }
+    ],
+    "mixTips": [
+      "Boom bap: la groove vient du timing (micro-retards), pas du nombre de notes.",
+      "Snare: laisse-la respirer, FX minimal, punch maximal.",
+      "Un peu d'imperfection = beaucoup de vibe."
+    ],
+    "glossaryTags": ["swing", "timing", "bus comp", "parallel compression"]
+  },
+  "structure": {
+    "timeSignature": "4/4",
+    "sectionOrder": [
+      { "id": "intro", "bars": 4, "notes": "sample + drums entrent progressivement" },
+      { "id": "verse", "bars": 16, "notes": "groove stable, variations de hats" },
+      { "id": "chorus", "bars": 8, "notes": "fill + crash/ride discret" },
+      { "id": "verse", "bars": 16 },
+      { "id": "chorus", "bars": 8 },
+      { "id": "outro", "bars": 4 }
+    ]
+  },
+  "similarTracks": [
+    {
+      "title": "Shook Ones, Pt. II",
+      "artist": "Mobb Deep",
+      "year": 1995,
+      "tags": ["subgenre:boombap-gritty", "era:90s", "mood:dark", "drums:hard-snare", "swing:low", "sample:minor", "mix:raw", "arrangement:loop-based"]
+    },
+    {
+      "title": "93 'Til Infinity",
+      "artist": "Souls of Mischief",
+      "year": 1993,
+      "tags": ["subgenre:boombap-jazzy", "era:90s", "mood:uplift", "drums:loose", "swing:medium", "sample:jazz", "mix:warm", "arrangement:classic-verse"]
+    },
+    {
+      "title": "Above the Clouds",
+      "artist": "Gang Starr",
+      "year": 1998,
+      "tags": ["subgenre:boombap-classic", "era:90s", "mood:confident", "drums:punchy", "swing:medium", "sample:strings", "mix:balanced", "arrangement:hook-short"]
+    },
+    {
+      "title": "The World Is Yours",
+      "artist": "Nas",
+      "year": 1994,
+      "tags": ["subgenre:boombap-smooth", "era:90s", "mood:reflective", "drums:clean", "swing:low", "sample:soul", "mix:warm", "arrangement:verse-forward"]
+    }
+  ]
+}

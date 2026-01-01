@@ -1,0 +1,85 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--gp-s-2);
+  border-radius: var(--gp-r-md);
+  border: 1px solid transparent;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1;
+  cursor: pointer;
+  transition: transform 120ms ease, background 160ms ease, border-color 160ms ease,
+    color 160ms ease, box-shadow 160ms ease, opacity 160ms ease;
+}
+
+.button:focus-visible {
+  outline: 2px solid var(--gp-accent);
+  outline-offset: 3px;
+}
+
+.button:active {
+  transform: translateY(1px);
+}
+
+.primary {
+  background: var(--gp-accent);
+  color: var(--gp-bg);
+  border-color: var(--gp-accent);
+  box-shadow: 0 10px 22px rgba(91, 92, 235, 0.3);
+}
+
+.primary:hover:not(:disabled) {
+  box-shadow: 0 12px 24px rgba(91, 92, 235, 0.42);
+}
+
+.ghost {
+  background: transparent;
+  color: var(--gp-text);
+  border-color: var(--gp-border);
+}
+
+.ghost:hover:not(:disabled) {
+  background: var(--gp-surface);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.md {
+  padding: var(--gp-s-3) var(--gp-s-5);
+  font-size: 14px;
+}
+
+.sm {
+  padding: var(--gp-s-2) var(--gp-s-4);
+  font-size: 13px;
+}
+
+.button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+  transform: none;
+}
+
+.loading {
+  cursor: progress;
+}
+
+.spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: gp-spin 0.7s linear infinite;
+}
+
+.label {
+  display: inline-flex;
+  align-items: center;
+}
+
+@keyframes gp-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}

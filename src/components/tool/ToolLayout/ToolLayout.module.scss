@@ -1,0 +1,30 @@
+.layout {
+  display: grid;
+  gap: var(--gp-s-5);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 360px);
+  grid-template-areas:
+    "header header"
+    "main aside";
+}
+
+.header {
+  grid-area: header;
+}
+
+.main {
+  grid-area: main;
+}
+
+.aside {
+  grid-area: aside;
+}
+
+@media (max-width: 980px) {
+  .layout {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "header"
+      "main"
+      "aside";
+  }
+}

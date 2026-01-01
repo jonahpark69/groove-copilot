@@ -1,0 +1,69 @@
+{
+  "id": "reggaeton",
+  "name": "Reggaeton",
+  "bpmRange": { "min": 85, "max": 105, "default": 95 },
+  "stepsDefault": 16,
+  "tracks": [
+    { "id": "kick", "name": "Kick", "role": "foundation" },
+    { "id": "snare", "name": "Snare", "role": "backbeat" },
+    { "id": "clap", "name": "Clap", "role": "texture" },
+    { "id": "perc", "name": "Perc", "role": "groove" },
+    { "id": "tom", "name": "Toms", "role": "groove" },
+    { "id": "hat", "name": "Hi-hat", "role": "texture" },
+    { "id": "bass", "name": "Bass", "role": "bass" },
+    { "id": "fx", "name": "FX", "role": "fx" }
+  ],
+  "coach": {
+    "instrumentsCore": ["Kick", "Snare", "Toms (dembow)"],
+    "instrumentsOptional": ["Claps layers", "Extra percs", "Risers/impacts"],
+    "fxPacks": [
+      { "name": "Dembow Tight", "items": ["Transient (toms)", "EQ low cut hats", "Short room (snare)"] },
+      { "name": "Club Ready", "items": ["Saturation bass", "Limiter doux", "Mono sub control"] }
+    ],
+    "mixTips": [
+      "Reggaeton: le motif dembow doit rester lisible (toms/snare).",
+      "Kick/bass: clair et tight, pas de sub flou.",
+      "FX surtout sur transitions: builds courts, impacts propres."
+    ],
+    "glossaryTags": ["dembow", "toms", "club mix", "mono sub"]
+  },
+  "structure": {
+    "timeSignature": "4/4",
+    "sectionOrder": [
+      { "id": "intro", "bars": 4, "notes": "dembow tease + FX" },
+      { "id": "verse", "bars": 16, "notes": "dembow stable, fills courts" },
+      { "id": "chorus", "bars": 8, "notes": "layers + impacts" },
+      { "id": "verse", "bars": 16 },
+      { "id": "chorus", "bars": 8 },
+      { "id": "bridge", "bars": 8, "notes": "drop elements, rebuild" },
+      { "id": "chorus", "bars": 8 },
+      { "id": "outro", "bars": 4 }
+    ]
+  },
+  "similarTracks": [
+    {
+      "title": "Gasolina",
+      "artist": "Daddy Yankee",
+      "year": 2004,
+      "tags": ["subgenre:classic-perreo", "era:2000s", "mood:club", "pattern:dembow-core", "drums:dry", "toms:prominent", "mix:raw", "arrangement:straight"]
+    },
+    {
+      "title": "DÁKITI",
+      "artist": "Bad Bunny & Jhay Cortez",
+      "year": 2020,
+      "tags": ["subgenre:modern-reggaeton", "era:2020s", "mood:smooth-club", "pattern:dembow-modern", "drums:polished", "bass:deep", "mix:wide", "arrangement:hook-loop"]
+    },
+    {
+      "title": "Con Altura",
+      "artist": "ROSALÍA & J Balvin",
+      "year": 2019,
+      "tags": ["subgenre:latin-pop-reggaeton", "era:2019-2020", "mood:bouncy", "drums:clean", "perc:layered", "bass:tight", "mix:radio", "arrangement:pop-sections"]
+    },
+    {
+      "title": "Tití Me Preguntó",
+      "artist": "Bad Bunny",
+      "year": 2022,
+      "tags": ["subgenre:reggaeton-switch", "era:2022", "mood:party", "drums:hybrid", "perc:busy", "bass:driving", "mix:loud", "arrangement:multiple-sections"]
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+/* ==========================================================================
+   Base (J2)
+   ========================================================================== */
+
+body {
+  font-family: var(--gp-font);
+  background: var(--gp-bg);
+  color: var(--gp-text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+::selection {
+  background: rgba(91, 92, 235, 0.35);
+}
+
+:focus-visible {
+  outline: 2px solid var(--gp-accent);
+  outline-offset: 3px;
+}

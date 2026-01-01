@@ -1,0 +1,77 @@
+.tabs {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--gp-s-1);
+  padding: var(--gp-s-1);
+  border-radius: 999px;
+  border: 1px solid var(--gp-border);
+  background: var(--gp-surface);
+}
+
+.tab {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: var(--gp-s-1);
+  padding: 8px 14px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: var(--gp-muted);
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1;
+  cursor: pointer;
+  transition: transform 120ms ease, background 160ms ease, border-color 160ms ease,
+    color 160ms ease, box-shadow 160ms ease, opacity 160ms ease;
+}
+
+.tab:hover:not(:disabled) {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--gp-text);
+}
+
+.tab:active {
+  transform: translateY(1px);
+}
+
+.tab:focus-visible {
+  outline: 2px solid var(--gp-accent);
+  outline-offset: 3px;
+}
+
+.active {
+  background: rgba(91, 92, 235, 0.18);
+  border-color: rgba(91, 92, 235, 0.42);
+  color: var(--gp-text);
+  box-shadow: 0 10px 20px rgba(91, 92, 235, 0.22);
+}
+
+.disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.label {
+  display: inline-flex;
+  align-items: center;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 18px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  border: 1px solid var(--gp-border);
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--gp-text);
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.active .badge {
+  border-color: rgba(91, 92, 235, 0.45);
+  background: rgba(91, 92, 235, 0.22);
+}

@@ -1,0 +1,64 @@
+{
+  "id": "trap",
+  "name": "Trap",
+  "bpmRange": { "min": 120, "max": 160, "default": 140 },
+  "stepsDefault": 16,
+  "tracks": [
+    { "id": "kick", "name": "Kick", "role": "foundation" },
+    { "id": "clap", "name": "Clap/Snare", "role": "backbeat" },
+    { "id": "hat", "name": "Hi-hat", "role": "groove" },
+    { "id": "perc", "name": "Perc", "role": "texture" },
+    { "id": "808", "name": "808", "role": "bass" }
+  ],
+  "coach": {
+    "instrumentsCore": ["Kick", "Clap/Snare", "Hi-hat", "808"],
+    "instrumentsOptional": ["Open hat", "Crash", "Rim", "Vox chop"],
+    "fxPacks": [
+      { "name": "Space & Air", "items": ["Short reverb", "Delay ping-pong léger", "Stereo widener subtil"] },
+      { "name": "Energy", "items": ["Soft clipper", "Saturation légère", "Transient shaper (hat/clap)"] }
+    ],
+    "mixTips": [
+      "Kick et 808: décide qui domine le sub (souvent 808) et sidechain léger si besoin.",
+      "Hi-hats: varie la vélocité + micro-variations, évite l'effet mitraillette.",
+      "Garde de la headroom: vise -6 dB peak sur le master pendant la prod."
+    ],
+    "glossaryTags": ["swing", "velocity", "ghost note", "sidechain", "clipper"]
+  },
+  "structure": {
+    "timeSignature": "4/4",
+    "sectionOrder": [
+      { "id": "intro", "bars": 4, "notes": "FX + hats légers" },
+      { "id": "verse", "bars": 16, "notes": "kick sparse + 808 simple" },
+      { "id": "chorus", "bars": 8, "notes": "808 plus active + hats plus denses" },
+      { "id": "verse", "bars": 16 },
+      { "id": "chorus", "bars": 8 },
+      { "id": "outro", "bars": 4, "notes": "drop elements progressivement" }
+    ]
+  },
+  "similarTracks": [
+    {
+      "title": "XO TOUR Llif3",
+      "artist": "Lil Uzi Vert",
+      "year": 2017,
+      "tags": ["subgenre:melodic-trap", "era:2016-2018", "mood:emo", "drums:clean", "808:sub-sustain", "hats:rolls", "arrangement:verse-chorus", "mix:bright-top"]
+    },
+    {
+      "title": "Bad and Boujee",
+      "artist": "Migos",
+      "year": 2016,
+      "tags": ["subgenre:atlanta-trap", "era:2015-2017", "mood:bouncy", "drums:staccato", "hats:triplets", "snare:clap", "808:short-punch", "arrangement:hook-centric"]
+    },
+    {
+      "title": "Stop Breathing",
+      "artist": "Playboi Carti",
+      "year": 2020,
+      "tags": ["subgenre:rage-trap", "era:2019-2021", "mood:aggressive", "drums:distorted", "808:saturated", "hats:fast", "sound:synth-wall", "mix:clipped"]
+    },
+    {
+      "title": "Mask Off",
+      "artist": "Future",
+      "year": 2017,
+      "tags": ["subgenre:dark-trap", "era:2016-2018", "mood:moody", "drums:spacey", "808:sub-heavy", "hats:simple", "lead:topline-motif", "mix:wide-lead"]
+    }
+  ]
+}

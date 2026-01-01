@@ -1,0 +1,71 @@
+{
+  "id": "pop",
+  "name": "Pop",
+  "bpmRange": { "min": 95, "max": 140, "default": 120 },
+  "stepsDefault": 16,
+  "tracks": [
+    { "id": "kick", "name": "Kick", "role": "foundation" },
+    { "id": "snare", "name": "Snare", "role": "backbeat" },
+    { "id": "clap", "name": "Clap", "role": "texture" },
+    { "id": "hat", "name": "Hi-hat", "role": "groove" },
+    { "id": "bass", "name": "Bass", "role": "bass" },
+    { "id": "chords", "name": "Chords", "role": "harmony" },
+    { "id": "lead", "name": "Lead", "role": "melody" },
+    { "id": "fx", "name": "FX", "role": "fx" }
+  ],
+  "coach": {
+    "instrumentsCore": ["Kick", "Snare", "Bass", "Chords"],
+    "instrumentsOptional": ["Claps layers", "Topline lead", "Risers", "Impacts"],
+    "fxPacks": [
+      { "name": "Pop Shine", "items": ["Plate reverb (snare)", "Delay quarter (lead)", "Chorus léger (chords)"] },
+      { "name": "Glue", "items": ["Bus comp léger", "Saturation douce", "Limiter doux (preview)"] }
+    ],
+    "mixTips": [
+      "Pop = lisibilité: bass tight, lead devant, drums propres.",
+      "Layering: une source principale + une layer subtile (pas 12 layers qui se battent).",
+      "Automations: filtres/volumes pour construire les sections (verse→chorus)."
+    ],
+    "glossaryTags": ["layering", "automation", "plate reverb", "glue"]
+  },
+  "structure": {
+    "timeSignature": "4/4",
+    "sectionOrder": [
+      { "id": "intro", "bars": 4, "notes": "hook tease + drums light" },
+      { "id": "verse", "bars": 16, "notes": "kick simple, bass tight" },
+      { "id": "prechorus", "bars": 8, "notes": "build (riser + hats)" },
+      { "id": "chorus", "bars": 8, "notes": "full drums + hook lead" },
+      { "id": "verse", "bars": 16 },
+      { "id": "prechorus", "bars": 8 },
+      { "id": "chorus", "bars": 8 },
+      { "id": "bridge", "bars": 8, "notes": "drop drums, tension" },
+      { "id": "chorus", "bars": 8 },
+      { "id": "outro", "bars": 4 }
+    ]
+  },
+  "similarTracks": [
+    {
+      "title": "Blinding Lights",
+      "artist": "The Weeknd",
+      "year": 2019,
+      "tags": ["subgenre:synthpop-80s", "era:2019-2021", "mood:driving", "drums:4-on-floor", "bass:sequenced", "lead:hooky", "mix:bright", "arrangement:pop-standard"]
+    },
+    {
+      "title": "Levitating",
+      "artist": "Dua Lipa",
+      "year": 2020,
+      "tags": ["subgenre:dance-pop", "era:2020-2022", "mood:upbeat", "drums:disco-pop", "bass:funky", "chords:bright", "mix:polished", "arrangement:chorus-forward"]
+    },
+    {
+      "title": "Locked Out of Heaven",
+      "artist": "Bruno Mars",
+      "year": 2012,
+      "tags": ["subgenre:pop-funk", "era:2010s", "mood:energetic", "drums:live-feel", "bass:punchy", "guitars:rhythm", "mix:radio", "arrangement:bridge-strong"]
+    },
+    {
+      "title": "Bad Guy",
+      "artist": "Billie Eilish",
+      "year": 2019,
+      "tags": ["subgenre:minimal-pop", "era:2018-2020", "mood:quirky", "drums:dry", "bass:sub-pluck", "space:wide-gaps", "mix:close-vocal", "arrangement:short-switch"]
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "id": "afrobeats",
+  "name": "Afrobeats",
+  "bpmRange": { "min": 95, "max": 115, "default": 105 },
+  "stepsDefault": 16,
+  "tracks": [
+    { "id": "kick", "name": "Kick", "role": "foundation" },
+    { "id": "snare", "name": "Snare", "role": "backbeat" },
+    { "id": "hat", "name": "Hi-hat", "role": "groove" },
+    { "id": "shaker", "name": "Shaker", "role": "groove" },
+    { "id": "perc", "name": "Perc", "role": "texture" },
+    { "id": "clap", "name": "Clap", "role": "texture" },
+    { "id": "bass", "name": "Bass", "role": "bass" },
+    { "id": "chords", "name": "Chords", "role": "harmony" }
+  ],
+  "coach": {
+    "instrumentsCore": ["Kick", "Snare", "Shaker", "Perc"],
+    "instrumentsOptional": ["Guitars", "Marimba keys", "Vox chops", "Rim clicks"],
+    "fxPacks": [
+      { "name": "Warm Groove", "items": ["Saturation douce", "Room reverb courte", "Delay léger (perc)"] },
+      { "name": "Clarity", "items": ["EQ léger sur percs", "Transient shaper (kick)", "Limiter doux (preview)"] }
+    ],
+    "mixTips": [
+      "Afrobeats: groove = percs + shaker. Le kick n’a pas besoin d’être ultra dominant.",
+      "Pense call/response entre percs et hats.",
+      "Laisse de l’air au médium pour la voix."
+    ],
+    "glossaryTags": ["groove", "call and response", "transient", "warmth"]
+  },
+  "structure": {
+    "timeSignature": "4/4",
+    "sectionOrder": [
+      { "id": "intro", "bars": 4, "notes": "perc groove tease" },
+      { "id": "verse", "bars": 16, "notes": "call/response percs" },
+      { "id": "chorus", "bars": 8, "notes": "ajouter claps/shaker layers" },
+      { "id": "verse", "bars": 16 },
+      { "id": "chorus", "bars": 8 },
+      { "id": "break", "bars": 4, "notes": "drop drums, garder percs" },
+      { "id": "chorus", "bars": 8 },
+      { "id": "outro", "bars": 4 }
+    ]
+  },
+  "similarTracks": [
+    {
+      "title": "Last Last",
+      "artist": "Burna Boy",
+      "year": 2022,
+      "tags": ["subgenre:afropop-mainstream", "era:2021-2023", "mood:anthem", "drums:clean", "perc:rich", "bass:round", "mix:polished", "arrangement:chorus-strong"]
+    },
+    {
+      "title": "Essence",
+      "artist": "Wizkid ft. Tems",
+      "year": 2020,
+      "tags": ["subgenre:afrobeats-smooth", "era:2020-2022", "mood:chill", "drums:soft", "perc:shaker-led", "bass:warm", "mix:airy", "arrangement:steady-groove"]
+    },
+    {
+      "title": "Calm Down",
+      "artist": "Rema",
+      "year": 2022,
+      "tags": ["subgenre:afrobeats-melodic", "era:2022-2023", "mood:romantic", "drums:light", "perc:syncopated", "bass:controlled", "mix:clean-vocal", "arrangement:hook-loop"]
+    },
+    {
+      "title": "Soweto",
+      "artist": "Victony & Tempoe",
+      "year": 2022,
+      "tags": ["subgenre:afrobeats-amapiano-touch", "era:2022-2023", "mood:bouncy", "drums:log-drum-feel", "perc:layered", "bass:groovy", "mix:warm", "arrangement:drop-ish"]
+    }
+  ]
+}

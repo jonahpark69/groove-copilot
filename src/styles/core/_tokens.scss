@@ -1,0 +1,32 @@
+/* ==========================================================================
+   Tokens (J2) — Groove Copilot
+   ========================================================================== */
+
+:root {
+  /* Colors */
+  --gp-bg: #0b0c10;
+  --gp-surface: rgba(255, 255, 255, 0.06);
+  --gp-border: rgba(255, 255, 255, 0.12);
+  --gp-text: #f2f3f5;
+  --gp-muted: rgba(242, 243, 245, 0.72);
+  --gp-accent: #5b5ceb;
+
+  /* Radius */
+  --gp-r-sm: 10px;
+  --gp-r-md: 14px;
+  --gp-r-lg: 18px;
+
+  /* Shadow */
+  --gp-shadow-sm: 0 8px 24px rgba(0, 0, 0, 0.22);
+
+  /* Spacing (scale) */
+  --gp-s-1: 6px;
+  --gp-s-2: 10px;
+  --gp-s-3: 14px;
+  --gp-s-4: 18px;
+  --gp-s-5: 24px;
+  --gp-s-6: 32px;
+
+  /* Typography */
+  --gp-font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}

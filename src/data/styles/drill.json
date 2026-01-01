@@ -1,0 +1,64 @@
+{
+  "id": "drill",
+  "name": "Drill",
+  "bpmRange": { "min": 130, "max": 150, "default": 142 },
+  "stepsDefault": 16,
+  "tracks": [
+    { "id": "kick", "name": "Kick", "role": "foundation" },
+    { "id": "clap", "name": "Snare/Clap", "role": "backbeat" },
+    { "id": "hat", "name": "Hi-hat", "role": "groove" },
+    { "id": "perc", "name": "Perc", "role": "texture" },
+    { "id": "808", "name": "808", "role": "bass" }
+  ],
+  "coach": {
+    "instrumentsCore": ["Kick", "Snare/Clap", "Hi-hat", "808"],
+    "instrumentsOptional": ["Glide 808 layers", "Extra perc fills", "FX risers courts"],
+    "fxPacks": [
+      { "name": "Drill Bounce", "items": ["Saturation 808", "Limiter doux", "Room reverb très courte"] },
+      { "name": "Clarity", "items": ["EQ dynamique sur 808", "De-esser sur hats", "Stereo control (mono sub)"] }
+    ],
+    "mixTips": [
+      "808 drill: pense 'glide' + placement rythmique, pas juste la note.",
+      "Snare/clap: sec, peu de reverb. L'espace vient du pattern.",
+      "Sub en mono, toujours. Les enceintes de soirée te béniront."
+    ],
+    "glossaryTags": ["glide", "mono sub", "bounce", "dynamic EQ"]
+  },
+  "structure": {
+    "timeSignature": "4/4",
+    "sectionOrder": [
+      { "id": "intro", "bars": 4, "notes": "808 glide tease" },
+      { "id": "verse", "bars": 16, "notes": "glides + pauses" },
+      { "id": "chorus", "bars": 8, "notes": "pattern plus dense" },
+      { "id": "verse", "bars": 16 },
+      { "id": "chorus", "bars": 8 },
+      { "id": "outro", "bars": 4 }
+    ]
+  },
+  "similarTracks": [
+    {
+      "title": "Welcome To The Party",
+      "artist": "Pop Smoke",
+      "year": 2019,
+      "tags": ["subgenre:ny-drill", "era:2019-2020", "mood:anthem", "808:slide-glide", "drums:snappy", "hats:syncopated", "mix:punchy", "arrangement:drop-heavy"]
+    },
+    {
+      "title": "Body",
+      "artist": "Tion Wayne & Russ Millions",
+      "year": 2021,
+      "tags": ["subgenre:uk-drill", "era:2020-2022", "mood:club", "808:glide", "drums:clean", "hats:patterns", "mix:polished", "arrangement:hook-loop"]
+    },
+    {
+      "title": "No Censor",
+      "artist": "Zone 2",
+      "year": 2019,
+      "tags": ["subgenre:uk-drill-dark", "era:2018-2020", "mood:dark", "808:sparse", "drums:minimal", "hats:dry", "mix:mid-forward", "arrangement:verse-driven"]
+    },
+    {
+      "title": "War",
+      "artist": "Drake",
+      "year": 2019,
+      "tags": ["subgenre:uk-drill-pop", "era:2019-2020", "mood:cool", "808:controlled", "drums:light", "hats:crisp", "mix:clean", "arrangement:short-sections"]
+    }
+  ]
+}

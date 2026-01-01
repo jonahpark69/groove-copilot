@@ -1,0 +1,37 @@
+.shell {
+  background: var(--gp-surface);
+  border: 1px solid var(--gp-border);
+  border-radius: var(--gp-r-lg);
+  box-shadow: var(--gp-shadow-sm);
+  padding: var(--gp-s-5);
+}
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--gp-s-4);
+  margin-bottom: var(--gp-s-4);
+}
+
+.title {
+  margin: 0;
+  font-size: 18px;
+  letter-spacing: -0.01em;
+}
+
+.description {
+  margin: var(--gp-s-2) 0 0;
+  color: var(--gp-muted);
+  font-size: 14px;
+}
+
+.right {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--gp-s-2);
+}
+
+.body {
+  min-height: 0;
+}

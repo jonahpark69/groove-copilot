@@ -1,0 +1,27 @@
+.panel {
+  background: var(--gp-surface);
+  border: 1px solid var(--gp-border);
+  border-radius: var(--gp-r-lg);
+  box-shadow: var(--gp-shadow-sm);
+  padding: var(--gp-s-5);
+}
+
+.header {
+  margin-bottom: var(--gp-s-4);
+}
+
+.title {
+  margin: 0;
+  font-size: 18px;
+  letter-spacing: -0.01em;
+}
+
+.subtitle {
+  margin: var(--gp-s-2) 0 0;
+  color: var(--gp-muted);
+  font-size: 14px;
+}
+
+.body {
+  min-height: 0;
+}

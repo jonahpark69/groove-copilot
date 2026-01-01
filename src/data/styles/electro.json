@@ -1,0 +1,67 @@
+{
+  "id": "electro",
+  "name": "Electro",
+  "bpmRange": { "min": 120, "max": 140, "default": 128 },
+  "stepsDefault": 16,
+  "tracks": [
+    { "id": "kick", "name": "Kick", "role": "foundation" },
+    { "id": "clap", "name": "Clap", "role": "backbeat" },
+    { "id": "hat", "name": "Hi-hat", "role": "groove" },
+    { "id": "ohat", "name": "Open hat", "role": "groove" },
+    { "id": "perc", "name": "Perc", "role": "texture" },
+    { "id": "sub", "name": "Sub Bass", "role": "bass" },
+    { "id": "chords", "name": "Chords/Stabs", "role": "harmony" },
+    { "id": "fx", "name": "FX", "role": "fx" }
+  ],
+  "coach": {
+    "instrumentsCore": ["Kick", "Open hat", "Sub bass"],
+    "instrumentsOptional": ["Synth stabs", "Arps", "Noise risers", "Impacts"],
+    "fxPacks": [
+      { "name": "Rave Space", "items": ["Reverb (short)", "Delay (sync)", "Stereo spread (mid/high)"] },
+      { "name": "Drive", "items": ["Saturation", "Clipper doux", "Bus comp léger"] }
+    ],
+    "mixTips": [
+      "Electro: kick solide + groove hats. Tout le reste s'aligne autour.",
+      "Sub en mono, stereo réservé aux mids/highs.",
+      "Automations (filter/drive) pour créer la tension."
+    ],
+    "glossaryTags": ["stabs", "sync delay", "drive", "automation"]
+  },
+  "structure": {
+    "timeSignature": "4/4",
+    "sectionOrder": [
+      { "id": "intro", "bars": 8, "notes": "kick + hats, DJ-friendly" },
+      { "id": "break", "bars": 8, "notes": "filter down + risers" },
+      { "id": "drop", "bars": 16, "notes": "full groove + stabs" },
+      { "id": "break", "bars": 8 },
+      { "id": "drop", "bars": 16 },
+      { "id": "outro", "bars": 8, "notes": "elements out progressivement" }
+    ]
+  },
+  "similarTracks": [
+    {
+      "title": "One More Time",
+      "artist": "Daft Punk",
+      "year": 2000,
+      "tags": ["subgenre:french-house", "era:2000s", "mood:uplift", "drums:4-on-floor", "bass:sidechain", "chords:filter", "mix:warm", "arrangement:loop-build"]
+    },
+    {
+      "title": "Animals",
+      "artist": "Martin Garrix",
+      "year": 2013,
+      "tags": ["subgenre:big-room", "era:2012-2014", "mood:festival", "drums:big-kick", "drop:lead-saw", "fx:risers", "mix:loud", "arrangement:break-drop"]
+    },
+    {
+      "title": "Ghosts 'n' Stuff",
+      "artist": "deadmau5 ft. Rob Swire",
+      "year": 2008,
+      "tags": ["subgenre:electro-progressive", "era:2008-2011", "mood:driving", "bass:rolling", "lead:hooky", "fx:subtle", "mix:clean", "arrangement:long-build"]
+    },
+    {
+      "title": "Satisfaction",
+      "artist": "Benny Benassi",
+      "year": 2002,
+      "tags": ["subgenre:electroclash", "era:2000s", "mood:dirty", "drums:straight", "bass:distorted", "lead:riff", "mix:raw-loud", "arrangement:riff-loop"]
+    }
+  ]
+}

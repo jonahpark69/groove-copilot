@@ -1,0 +1,32 @@
+/* ==========================================================================
+   Utilities (J2)
+   ========================================================================== */
+
+.gp-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px 20px;
+}
+
+.gp-surface {
+  background: var(--gp-surface);
+  border: 1px solid var(--gp-border);
+  border-radius: var(--gp-r-lg);
+  box-shadow: var(--gp-shadow-sm);
+}
+
+.gp-muted {
+  color: var(--gp-muted);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
