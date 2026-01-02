@@ -8,7 +8,7 @@ type SliderProps = {
   max: number;
   step?: number;
   onChange: (value: number) => void;
-  unit?: string;
+  hint?: string;
   disabled?: boolean;
 };
 
@@ -19,25 +19,23 @@ export default function Slider({
   max,
   step,
   onChange,
-  unit,
+  hint,
   disabled = false,
 }: SliderProps) {
   const autoId = useId();
   const inputId = `slider-${autoId}`;
-  const valueLabel = unit ? `${value} ${unit}` : `${value}`;
 
   return (
     <div className={styles.slider}>
-      {(label || valueLabel) && (
-        <div className={styles.header}>
-          {label && (
-            <label className={styles.label} htmlFor={inputId}>
-              {label}
-            </label>
-          )}
-          <span className={styles.value}>{valueLabel}</span>
-        </div>
-      )}
+      <div className={styles.header}>
+        {label && (
+          <label className={styles.label} htmlFor={inputId}>
+            {label}
+          </label>
+        )}
+        <span className={styles.value}>{value}</span>
+      </div>
+      {hint && <p className={styles.hint}>{hint}</p>}
       <input
         id={inputId}
         className={styles.input}

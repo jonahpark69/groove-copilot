@@ -1,14 +1,16 @@
+@use "@/styles/sass" as *;
+
 .toggle {
   display: inline-flex;
   align-items: center;
   justify-content: space-between;
-  gap: var(--gp-s-3);
-  color: var(--gp-text);
+  gap: 12px;
+  color: var(--fg);
 }
 
 .label {
   font-size: 14px;
-  color: var(--gp-text);
+  color: var(--fg);
 }
 
 .switch {
@@ -29,8 +31,8 @@
   width: 44px;
   height: 26px;
   border-radius: 999px;
-  border: 1px solid var(--gp-border);
-  background: var(--gp-surface);
+  border: 1px solid var(--border);
+  background: var(--card);
   display: inline-flex;
   align-items: center;
   padding: 0 3px;
@@ -42,25 +44,24 @@
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  background: var(--gp-text);
+  background: var(--fg);
   transform: translateX(0);
   transition: transform 180ms ease, background 180ms ease;
   box-shadow: 0 6px 14px rgba(0, 0, 0, 0.3);
 }
 
 .input:checked + .track {
-  background: rgba(91, 92, 235, 0.2);
-  border-color: rgba(91, 92, 235, 0.45);
+  background: rgba(0, 0, 0, 0.08);
+  border-color: var(--border);
 }
 
 .input:checked + .track .thumb {
   transform: translateX(18px);
-  background: var(--gp-accent);
+  background: var(--fg);
 }
 
 .input:focus-visible + .track {
-  outline: 2px solid var(--gp-accent);
-  outline-offset: 3px;
+  @include focus-ring;
 }
 
 .input:disabled + .track {

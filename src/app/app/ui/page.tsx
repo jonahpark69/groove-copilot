@@ -5,7 +5,7 @@ import { Badge, Button, IconButton, Panel, Slider, Tabs, Toggle } from "@/compon
 
 const tabItems = [
   { id: "overview", label: "Overview" },
-  { id: "arrangement", label: "Arrangement", badge: "New" },
+  { id: "arrangement", label: "Arrangement" },
   { id: "mix", label: "Mix", disabled: true },
 ];
 
@@ -35,11 +35,11 @@ export default function UiKitPage() {
             UI KIT
           </p>
           <h1 style={{ margin: "6px 0 0", fontSize: "32px" }}>
-            Groove Copilot — Components
+            Groove Copilot - Components
           </h1>
         </div>
         <div style={{ display: "flex", gap: 8, flexWrap: "wrap" }}>
-          <Badge tone="accent">J3</Badge>
+          <Badge tone="info">J3</Badge>
           <Badge tone="neutral">React + SCSS</Badge>
         </div>
       </header>
@@ -55,6 +55,7 @@ export default function UiKitPage() {
           <div style={{ display: "flex", flexWrap: "wrap", gap: 12 }}>
             <Button>Primary</Button>
             <Button variant="ghost">Ghost</Button>
+            <Button variant="subtle">Subtle</Button>
             <Button isLoading>Loading</Button>
             <Button disabled>Disabled</Button>
           </div>
@@ -62,7 +63,7 @@ export default function UiKitPage() {
 
         <Panel title="Icon Buttons" subtitle="Hover + focus visible">
           <div style={{ display: "flex", gap: 12 }}>
-            <IconButton ariaLabel="Play">
+            <IconButton label="Play">
               <svg
                 width="18"
                 height="18"
@@ -73,7 +74,7 @@ export default function UiKitPage() {
                 <path d="M8 5v14l11-7z" />
               </svg>
             </IconButton>
-            <IconButton ariaLabel="Settings">
+            <IconButton label="Settings" variant="subtle">
               <svg
                 width="18"
                 height="18"
@@ -84,7 +85,7 @@ export default function UiKitPage() {
                 <path d="M12 8.8a3.2 3.2 0 1 0 0 6.4 3.2 3.2 0 0 0 0-6.4zm8.4 3.2-.9-.5.1-1.1-1.6-2.8-1 .3-.8-.7.3-1-2.8-1.6-1.1.1-.5-.9H9.7l-.5.9-1.1-.1-2.8 1.6.3 1-.8.7-1-.3-1.6 2.8.1 1.1-.9.5v3.2l.9.5-.1 1.1 1.6 2.8 1-.3.8.7-.3 1 2.8 1.6 1.1-.1.5.9h3.2l.5-.9 1.1.1 2.8-1.6-.3-1 .8-.7 1 .3 1.6-2.8-.1-1.1.9-.5v-3.2zm-8.4 5.6a5.6 5.6 0 1 1 0-11.2 5.6 5.6 0 0 1 0 11.2z" />
               </svg>
             </IconButton>
-            <IconButton ariaLabel="Disabled" disabled>
+            <IconButton label="Disabled" disabled>
               <svg
                 width="18"
                 height="18"
@@ -98,8 +99,8 @@ export default function UiKitPage() {
           </div>
         </Panel>
 
-        <Panel title="Tabs" subtitle="Active, disabled, badge">
-          <Tabs items={tabItems} activeId={activeTab} onChange={setActiveTab} />
+        <Panel title="Tabs" subtitle="Active and disabled">
+          <Tabs items={tabItems} value={activeTab} onChange={setActiveTab} />
           <div
             role="tabpanel"
             id={`tabs-panel-${activeTab}`}
@@ -107,18 +108,14 @@ export default function UiKitPage() {
             style={{ marginTop: 16 }}
           >
             <p className="gp-muted" style={{ margin: 0 }}>
-              Active tab: <strong style={{ color: "var(--gp-text)" }}>{activeTab}</strong>
+              Active tab: <strong style={{ color: "var(--fg)" }}>{activeTab}</strong>
             </p>
           </div>
         </Panel>
 
         <Panel title="Toggles" subtitle="Interactive switch">
           <div style={{ display: "grid", gap: 14 }}>
-            <Toggle
-              label="Groove coach"
-              checked={enabled}
-              onChange={setEnabled}
-            />
+            <Toggle label="Groove coach" checked={enabled} onChange={setEnabled} />
             <Toggle
               label="Offline mode"
               checked={!enabled}
@@ -133,7 +130,7 @@ export default function UiKitPage() {
           </div>
         </Panel>
 
-        <Panel title="Sliders" subtitle="Value + unit">
+        <Panel title="Sliders" subtitle="Value display">
           <div style={{ display: "grid", gap: 18 }}>
             <Slider
               label="Tempo"
@@ -142,7 +139,7 @@ export default function UiKitPage() {
               max={180}
               step={1}
               onChange={setBpm}
-              unit="bpm"
+              hint="BPM"
             />
             <Slider
               label="Swing"
@@ -151,7 +148,7 @@ export default function UiKitPage() {
               max={60}
               step={1}
               onChange={setSwing}
-              unit="%"
+              hint="Percent"
             />
             <Slider
               label="Density"
@@ -160,7 +157,7 @@ export default function UiKitPage() {
               max={100}
               step={5}
               onChange={() => undefined}
-              unit="%"
+              hint="Percent"
               disabled
             />
           </div>

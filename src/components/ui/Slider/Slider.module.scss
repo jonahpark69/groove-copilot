@@ -1,23 +1,31 @@
+@use "@/styles/sass" as *;
+
 .slider {
   display: grid;
-  gap: var(--gp-s-2);
+  gap: 8px;
 }
 
 .header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: var(--gp-s-3);
+  gap: 12px;
 }
 
 .label {
-  font-size: 14px;
-  color: var(--gp-text);
+  font-size: 13px;
+  color: var(--fg);
 }
 
 .value {
-  font-size: 13px;
-  color: var(--gp-muted);
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.hint {
+  margin: 0;
+  font-size: 12px;
+  color: var(--muted);
 }
 
 .input {
@@ -30,8 +38,7 @@
 }
 
 .input:focus-visible {
-  outline: 2px solid var(--gp-accent);
-  outline-offset: 3px;
+  @include focus-ring;
 }
 
 .input:disabled {
@@ -42,8 +49,8 @@
 .input::-webkit-slider-runnable-track {
   height: 6px;
   border-radius: 999px;
-  background: linear-gradient(90deg, var(--gp-accent), rgba(91, 92, 235, 0.4));
-  border: 1px solid rgba(91, 92, 235, 0.45);
+  background: var(--border-soft);
+  border: 1px solid var(--border);
 }
 
 .input::-webkit-slider-thumb {
@@ -51,8 +58,8 @@
   width: 18px;
   height: 18px;
   border-radius: 50%;
-  background: var(--gp-text);
-  border: 2px solid var(--gp-accent);
+  background: var(--fg);
+  border: 2px solid var(--border);
   margin-top: -7px;
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
   transition: transform 120ms ease, box-shadow 160ms ease;
@@ -65,16 +72,16 @@
 .input::-moz-range-track {
   height: 6px;
   border-radius: 999px;
-  background: linear-gradient(90deg, var(--gp-accent), rgba(91, 92, 235, 0.4));
-  border: 1px solid rgba(91, 92, 235, 0.45);
+  background: var(--border-soft);
+  border: 1px solid var(--border);
 }
 
 .input::-moz-range-thumb {
   width: 18px;
   height: 18px;
   border-radius: 50%;
-  background: var(--gp-text);
-  border: 2px solid var(--gp-accent);
+  background: var(--fg);
+  border: 2px solid var(--border);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
   transition: transform 120ms ease, box-shadow 160ms ease;
 }

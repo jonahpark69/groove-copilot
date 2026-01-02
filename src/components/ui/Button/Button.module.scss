@@ -1,12 +1,15 @@
+@use "@/styles/sass" as *;
+
 .button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: var(--gp-s-2);
-  border-radius: var(--gp-r-md);
-  border: 1px solid transparent;
-  font-weight: 700;
-  font-size: 14px;
+  gap: 8px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--fg);
+  font-weight: 600;
   line-height: 1;
   cursor: pointer;
   transition: transform 120ms ease, background 160ms ease, border-color 160ms ease,
@@ -14,8 +17,7 @@
 }
 
 .button:focus-visible {
-  outline: 2px solid var(--gp-accent);
-  outline-offset: 3px;
+  @include focus-ring;
 }
 
 .button:active {
@@ -23,35 +25,45 @@
 }
 
 .primary {
-  background: var(--gp-accent);
-  color: var(--gp-bg);
-  border-color: var(--gp-accent);
-  box-shadow: 0 10px 22px rgba(91, 92, 235, 0.3);
+  background: var(--fg);
+  color: var(--bg);
+  border-color: var(--fg);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
 }
 
 .primary:hover:not(:disabled) {
-  box-shadow: 0 12px 24px rgba(91, 92, 235, 0.42);
+  box-shadow: 0 12px 26px rgba(0, 0, 0, 0.24);
 }
 
 .ghost {
   background: transparent;
-  color: var(--gp-text);
-  border-color: var(--gp-border);
+  color: var(--fg);
+  border-color: var(--border);
 }
 
 .ghost:hover:not(:disabled) {
-  background: var(--gp-surface);
-  border-color: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.04);
+  border-color: var(--border-soft);
+}
+
+.subtle {
+  background: var(--card);
+  color: var(--fg);
+  border-color: var(--border-soft);
+}
+
+.subtle:hover:not(:disabled) {
+  border-color: var(--border);
 }
 
 .md {
-  padding: var(--gp-s-3) var(--gp-s-5);
+  padding: 12px 18px;
   font-size: 14px;
 }
 
 .sm {
-  padding: var(--gp-s-2) var(--gp-s-4);
-  font-size: 13px;
+  padding: 9px 14px;
+  font-size: 12px;
 }
 
 .button:disabled {
@@ -70,7 +82,12 @@
   border: 2px solid currentColor;
   border-right-color: transparent;
   border-radius: 50%;
-  animation: gp-spin 0.7s linear infinite;
+  animation: ui-spin 0.7s linear infinite;
+}
+
+.icon {
+  display: inline-flex;
+  align-items: center;
 }
 
 .label {
@@ -78,7 +95,7 @@
   align-items: center;
 }
 
-@keyframes gp-spin {
+@keyframes ui-spin {
   to {
     transform: rotate(360deg);
   }

@@ -7,8 +7,9 @@ import kpop from "@/data/styles/kpop.json";
 import afrobeats from "@/data/styles/afrobeats.json";
 import reggaeton from "@/data/styles/reggaeton.json";
 import electro from "@/data/styles/electro.json";
+import { sanitizePreset, validatePresets } from "@/features/engine/validate";
 
-const ALL = [
+const RAW = [
   trap,
   drill,
   boombap,
@@ -19,35 +20,17 @@ const ALL = [
   electro,
 ] as unknown as StylePreset[];
 
-function assertPreset(preset: StylePreset): void {
-  if (!preset.id || !preset.name) {
-    throw new Error("Invalid preset: missing id or name");
-  }
-
-  if (
-    !preset.bpmRange ||
-    typeof preset.bpmRange.min !== "number" ||
-    typeof preset.bpmRange.max !== "number" ||
-    typeof preset.bpmRange.default !== "number"
-  ) {
-    throw new Error(`Invalid preset ${preset.id}: invalid bpmRange`);
-  }
-
-  if (
-    preset.bpmRange.min > preset.bpmRange.max ||
-    preset.bpmRange.default < preset.bpmRange.min ||
-    preset.bpmRange.default > preset.bpmRange.max
-  ) {
-    throw new Error(`Invalid preset ${preset.id}: bpmRange out of bounds`);
-  }
-
-  if (!Array.isArray(preset.tracks) || preset.tracks.length === 0) {
-    throw new Error(`Invalid preset ${preset.id}: tracks missing`);
-  }
-}
+const ALL = RAW.map(sanitizePreset);
+let hasWarned = false;
 
 export function getStylePresets(): StylePreset[] {
-  ALL.forEach(assertPreset);
+  if (process.env.NODE_ENV !== "production" && !hasWarned) {
+    const issues = validatePresets(ALL);
+    if (issues.length > 0) {
+      console.warn("[presets] Validation issues:", issues);
+    }
+    hasWarned = true;
+  }
   return ALL;
 }
 
@@ -57,7 +40,6 @@ export function getStylePresetById(id: StyleId): StylePreset {
     throw new Error(`Unknown style preset: ${id}`);
   }
 
-  assertPreset(preset);
   return preset;
 }
 

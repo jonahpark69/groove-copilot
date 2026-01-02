@@ -3,7 +3,16 @@
    Base minimal premium. Tokens/design system arrivent J2.
    ========================================================================== */
 
-@use "../styles/core/tokens";
-@use "../styles/core/reset";
-@use "../styles/core/base";
-@use "../styles/core/utilities";
+@use "@/styles/core" as *;
+@use "@/styles/theme" as *;
+@use "@/styles/core/tokens";
+
+:root {
+  color-scheme: dark;
+  --bg: var(--gp-bg);
+  --fg: var(--gp-text);
+  --muted: var(--gp-muted);
+  --border: var(--gp-border);
+  --border-soft: rgba(255, 255, 255, 0.08);
+  --card: var(--gp-surface);
+}

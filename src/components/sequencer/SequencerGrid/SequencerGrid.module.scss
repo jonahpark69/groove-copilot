@@ -1,0 +1,139 @@
+@use "../../../styles/sass" as *;
+
+.wrap {
+  background: var(--gp-surface);
+  border: 1px solid var(--gp-border);
+  border-radius: 16px;
+  padding: 18px 20px;
+  box-shadow: var(--gp-shadow-sm);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--gp-s-3);
+  margin-bottom: var(--gp-s-3);
+}
+
+.title {
+  margin: 0;
+  font-size: 20px;
+  letter-spacing: -0.01em;
+}
+
+.meta {
+  font-size: 12px;
+  color: var(--gp-muted);
+}
+
+.scroller {
+  display: grid;
+  gap: 10px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+}
+
+.row {
+  display: grid;
+  gap: 6px;
+  align-items: center;
+}
+
+.headerSpacer {
+  min-height: 18px;
+}
+
+.stepNumber {
+  position: relative;
+  font-size: 11px;
+  color: var(--gp-muted);
+  text-align: center;
+  z-index: 0;
+}
+
+.stepNumber[data-beat="1"] {
+  color: var(--gp-text);
+}
+
+.stepNumber[data-beat="1"]::after,
+.stepNumber[data-beat="3"]::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -4px;
+  width: 10px;
+  height: 2px;
+  transform: translateX(-50%);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.stepNumber[data-beat="3"]::after {
+  width: 6px;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.stepNumber[data-playhead="true"] {
+  color: var(--gp-text);
+}
+
+.stepNumber[data-playhead="true"]::before {
+  content: "";
+  position: absolute;
+  inset: -4px 6px auto;
+  height: 18px;
+  border-radius: 8px;
+  background: rgba(91, 92, 235, 0.16);
+  z-index: -1;
+}
+
+.rowLabel {
+  font-size: 13px;
+  color: var(--gp-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.cell {
+  width: 24px;
+  height: 24px;
+  border-radius: 6px;
+  border: 1px solid var(--gp-border);
+  background: transparent;
+  cursor: pointer;
+  transition: background 120ms ease, border-color 120ms ease;
+}
+
+.cell:focus-visible {
+  outline: 2px solid var(--gp-accent);
+  outline-offset: 2px;
+}
+
+.cell[data-beat="1"] {
+  box-shadow: inset 2px 0 0 rgba(255, 255, 255, 0.24);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.cell[data-beat="3"] {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.cellOn {
+  background: rgba(91, 92, 235, 0.35);
+  border-color: rgba(91, 92, 235, 0.6);
+}
+
+.cell[data-accent="true"] {
+  background: rgba(91, 92, 235, 0.6);
+  border-color: rgba(91, 92, 235, 0.9);
+  box-shadow: 0 0 0 1px rgba(91, 92, 235, 0.5);
+}
+
+.cell[data-playhead="true"] {
+  box-shadow: inset 0 0 0 1px rgba(91, 92, 235, 0.5);
+}
+
+.barSep {
+  border-left: 2px solid rgba(255, 255, 255, 0.28);
+}

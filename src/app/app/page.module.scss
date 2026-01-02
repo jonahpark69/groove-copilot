@@ -1,0 +1,49 @@
+@use "@/styles/sass" as *;
+
+.page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px 20px 40px;
+}
+
+.stack {
+  display: grid;
+  gap: 24px;
+}
+
+.controls {
+  border: 1px solid var(--border-soft);
+  border-radius: 16px;
+  background: var(--card);
+  padding: 16px 18px;
+  display: grid;
+  gap: 16px;
+}
+
+.controlsHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.controlsKicker {
+  margin: 0;
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.controlsSubtitle {
+  margin: 6px 0 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.sliders {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}

@@ -1,7 +1,8 @@
 import type { HTMLAttributes, ReactNode } from "react";
+import { cx } from "@/lib/cx";
 import styles from "./Badge.module.scss";
 
-type BadgeTone = "neutral" | "accent";
+type BadgeTone = "neutral" | "info" | "warn" | "success";
 
 type BadgeProps = HTMLAttributes<HTMLSpanElement> & {
   tone?: BadgeTone;
@@ -14,12 +15,8 @@ export default function Badge({
   className,
   ...rest
 }: BadgeProps) {
-  const classes = [styles.badge, styles[tone], className]
-    .filter(Boolean)
-    .join(" ");
-
   return (
-    <span className={classes} {...rest}>
+    <span className={cx(styles.badge, styles[tone], className)} {...rest}>
       {children}
     </span>
   );

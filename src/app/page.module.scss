@@ -1,0 +1,83 @@
+@use "@/styles/sass" as *;
+
+.page {
+  min-height: 100vh;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px 20px 56px;
+  display: grid;
+  gap: 32px;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+
+.nav {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.hero {
+  display: grid;
+  gap: 16px;
+}
+
+.kicker {
+  margin: 0;
+  font-size: 12px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.title {
+  margin: 0;
+  font-size: clamp(34px, 5vw, 52px);
+  letter-spacing: -0.03em;
+}
+
+.tagline {
+  margin: 0;
+  max-width: 600px;
+  color: var(--muted);
+  font-size: 16px;
+}
+
+.ctaRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.panels {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.bullets {
+  margin: 0;
+  padding-left: 18px;
+  display: grid;
+  gap: 8px;
+  color: var(--muted);
+}
+
+.footer {
+  color: var(--muted);
+  font-size: 14px;
+}

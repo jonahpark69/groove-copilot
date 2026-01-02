@@ -1,0 +1,103 @@
+.panel {
+  background: var(--gp-surface);
+  border: 1px solid var(--gp-border);
+  border-radius: 16px;
+  padding: 18px 20px;
+  box-shadow: var(--gp-shadow-sm);
+}
+
+.title {
+  margin: 0;
+  font-size: 20px;
+  letter-spacing: -0.01em;
+}
+
+.section {
+  margin-top: var(--gp-s-4);
+}
+
+.sectionTitle {
+  margin: 0 0 var(--gp-s-2);
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--gp-muted);
+}
+
+.subTitle {
+  margin: 0 0 var(--gp-s-1);
+  font-size: 14px;
+}
+
+.label {
+  margin: 0 0 var(--gp-s-1);
+  font-size: 12px;
+  color: var(--gp-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 6px;
+}
+
+.listItem {
+  display: grid;
+  gap: 4px;
+  font-size: 13px;
+}
+
+.itemTitle {
+  font-weight: 600;
+  font-size: 13px;
+}
+
+.muted {
+  color: var(--gp-muted);
+  font-size: 12px;
+}
+
+.columns {
+  display: grid;
+  gap: var(--gp-s-3);
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+}
+
+.stack {
+  display: grid;
+  gap: var(--gp-s-3);
+}
+
+.trackCard {
+  border: 1px solid var(--gp-border);
+  border-radius: 12px;
+  padding: 12px;
+  display: grid;
+  gap: 10px;
+}
+
+.trackHeader {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--gp-s-2);
+}
+
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  border: 1px solid var(--gp-border);
+  border-radius: 999px;
+  padding: 2px 10px;
+  font-size: 11px;
+  color: var(--gp-muted);
+}

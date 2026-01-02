@@ -1,11 +1,11 @@
-/* ==========================================================================
-   Reset (J2)
-   ========================================================================== */
-
 *,
 *::before,
 *::after {
   box-sizing: border-box;
+}
+
+* {
+  margin: 0;
 }
 
 html,
@@ -14,22 +14,33 @@ body {
 }
 
 body {
-  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 img,
-svg,
+picture,
 video,
-canvas {
-  max-width: 100%;
-  height: auto;
+canvas,
+svg {
   display: block;
+  max-width: 100%;
 }
 
-button,
 input,
-select,
-textarea {
+button,
+textarea,
+select {
   font: inherit;
   color: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul,
+ol {
+  padding-left: 1.25rem;
 }

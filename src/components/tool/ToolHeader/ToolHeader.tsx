@@ -1,19 +1,49 @@
 "use client";
 
-import { useState } from "react";
 import { Badge, Button, IconButton } from "@/components/ui";
-import { clampBpm, getStylePresetById, getStylePresets } from "@/features/engine/presets";
-import type { StyleId } from "@/features/engine/types";
+import { getStylePresetById } from "@/features/engine/presets";
+import type { StyleId, StylePreset } from "@/features/engine/types";
 import styles from "./ToolHeader.module.scss";
 
-export default function ToolHeader() {
-  const presets = getStylePresets();
-  const [styleId, setStyleId] = useState<StyleId>("trap");
-  const [bpm, setBpm] = useState(
-    () => getStylePresetById("trap").bpmRange.default
-  );
+type ToolHeaderProps = {
+  presets: StylePreset[];
+  styleId: StyleId;
+  bpm: number;
+  onStyleChange: (next: StyleId) => void;
+  onBpmChange: (next: number) => void;
+  onGenerate: () => void;
+  onPlay: () => void;
+  onStop: () => void;
+  isPlaying: boolean;
+  audioStatus: "off" | "loading" | "ready";
+};
+
+export default function ToolHeader({
+  presets,
+  styleId,
+  bpm,
+  onStyleChange,
+  onBpmChange,
+  onGenerate,
+  onPlay,
+  onStop,
+  isPlaying,
+  audioStatus,
+}: ToolHeaderProps) {
   const preset = getStylePresetById(styleId);
   const subtitle = `${preset.name} • ${preset.bpmRange.min}-${preset.bpmRange.max} bpm • ${preset.tracks.length} tracks`;
+  const audioLabel =
+    audioStatus === "ready"
+      ? "Audio: ready"
+      : audioStatus === "loading"
+      ? "Audio: loading"
+      : "Audio: off";
+  const audioTone =
+    audioStatus === "ready"
+      ? "success"
+      : audioStatus === "loading"
+      ? "warn"
+      : "neutral";
 
   return (
     <div className={styles.header}>
@@ -23,7 +53,10 @@ export default function ToolHeader() {
           <h1 className={styles.title}>Layout Tool</h1>
           <p className={styles.kicker}>{subtitle}</p>
         </div>
-        <Badge tone="neutral">POC</Badge>
+        <div className={styles.badges}>
+          <Badge tone="neutral">POC</Badge>
+          <Badge tone={audioTone}>{audioLabel}</Badge>
+        </div>
       </div>
 
       <div className={styles.controls}>
@@ -36,10 +69,7 @@ export default function ToolHeader() {
             className={styles.select}
             value={styleId}
             onChange={(event) => {
-              const nextId = event.target.value as StyleId;
-              const nextPreset = getStylePresetById(nextId);
-              setStyleId(nextId);
-              setBpm((current) => clampBpm(current, nextPreset));
+              onStyleChange(event.target.value as StyleId);
             }}
           >
             {presets.map((option) => (
@@ -64,15 +94,15 @@ export default function ToolHeader() {
             value={bpm}
             onChange={(event) => {
               const next = Number(event.target.value);
-              setBpm(clampBpm(next, preset));
+              onBpmChange(next);
             }}
           />
         </div>
 
-        <Button>Generate</Button>
+        <Button onClick={onGenerate}>Generate</Button>
 
         <div className={styles.transport}>
-          <IconButton ariaLabel="Play">
+          <IconButton label="Play" onClick={onPlay} disabled={isPlaying}>
             <svg
               width="18"
               height="18"
@@ -83,7 +113,7 @@ export default function ToolHeader() {
               <path d="M8 5v14l11-7z" />
             </svg>
           </IconButton>
-          <IconButton ariaLabel="Stop">
+          <IconButton label="Stop" onClick={onStop} disabled={!isPlaying}>
             <svg
               width="18"
               height="18"

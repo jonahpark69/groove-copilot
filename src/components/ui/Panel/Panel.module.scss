@@ -1,13 +1,18 @@
+@use "@/styles/sass" as *;
+
 .panel {
-  background: var(--gp-surface);
-  border: 1px solid var(--gp-border);
-  border-radius: var(--gp-r-lg);
-  box-shadow: var(--gp-shadow-sm);
-  padding: var(--gp-s-5);
+  background: var(--card);
+  border: 1px solid var(--border-soft);
+  border-radius: 16px;
+  padding: 18px;
 }
 
 .header {
-  margin-bottom: var(--gp-s-4);
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 16px;
 }
 
 .title {
@@ -17,9 +22,15 @@
 }
 
 .subtitle {
-  margin: var(--gp-s-2) 0 0;
-  color: var(--gp-muted);
-  font-size: 14px;
+  margin: 6px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.right {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .body {

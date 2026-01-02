@@ -1,25 +1,31 @@
 import type { ButtonHTMLAttributes, ReactNode } from "react";
+import { cx } from "@/lib/cx";
 import styles from "./IconButton.module.scss";
 
+type IconButtonVariant = "ghost" | "subtle";
+type IconButtonSize = "sm" | "md";
+
 type IconButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
-  ariaLabel: string;
+  label: string;
+  variant?: IconButtonVariant;
+  size?: IconButtonSize;
   children: ReactNode;
 };
 
 export default function IconButton({
-  ariaLabel,
+  label,
+  variant = "ghost",
+  size = "md",
   children,
   className,
   type = "button",
   ...rest
 }: IconButtonProps) {
-  const classes = [styles.button, className].filter(Boolean).join(" ");
-
   return (
     <button
       type={type}
-      className={classes}
-      aria-label={ariaLabel}
+      className={cx(styles.button, styles[variant], styles[size], className)}
+      aria-label={label}
       {...rest}
     >
       {children}
